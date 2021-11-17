@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
                 }
             });
             res.send({
-                status: user ? 'success' : 'user not found',
+                status: user ? 'success get data' : 'user not found',
                 user,
             })
         } catch (error) {
@@ -102,14 +102,14 @@ router.patch('/:id', async (req, res) => {
           where: {id}
       })
 
-       //proses update
+       //data after update
       const dataUpdate = await User.findOne({
           where: {id}
       })
 
 
       res.send({
-          status: "User succesfully update...",
+          status: "User data succesfully update...",
           user: dataUpdate,
       })
     //   console.log(updatedUser);
